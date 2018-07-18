@@ -5,7 +5,13 @@ app.controller('AppController', ['$http', function($http){
   this.createNote = function(){
     $http({
     method: 'POST',
-    url: '/notes'
+    url: '/notes',
+    data: {
+      author: this.author,
+      recipient: this.recipient,
+      content: this.content,
+      image: this.image
+    }
   }).then(function(response){
     console.log(response)
   }, function(error){
