@@ -16,4 +16,9 @@ notes.post('/', (req, res)=>{
   })
 });
 
+notes.delete('/:id', (req, res)=>{
+  Note.findByIdAndRemove(req.params.id, (err, deletedNote)=>{
+    res.json(deletedNote)
+  })
+})
 module.exports = notes;

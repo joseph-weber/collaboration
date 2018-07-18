@@ -2,6 +2,7 @@ const app = angular.module('NotesApp', []);
 
 app.controller('AppController', ['$http', function($http){
   const controller = this;
+
   this.createNote = function(){
     $http({
     method: 'POST',
@@ -27,5 +28,16 @@ this.showNotes = function(){
   controller.notes = response.data
 })
 }
+
+this.delete = function(note){
+  $http({
+    method: 'DELETE',
+    url: '/notes/' + note._id
+  }).then(function(response){
+    console.log(response)
+    controller.showNotes()
+  })
+}
+
 this.showNotes()
 }])
