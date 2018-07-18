@@ -24,11 +24,11 @@ app.get('/app', (req, res)=>{
   }
 })
 
-const userController = require('./controllers/users.js');
-app.use('/users', userController);
+// const userController = require('./controllers/users.js');
+// app.use('/users', userController);
 
-const sessionsController = require('./controllers/sessions.js');
-app.use('/sessions', sessionsController);
+// const sessionsController = require('./controllers/sessions.js');
+// app.use('/sessions', sessionsController);
 
 const notesController = require('./controllers/notes.js');
 app.use('/notes', notesController)
