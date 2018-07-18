@@ -3,10 +3,27 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js" charset="utf-8"></script>
         <script src="./js/app.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="/css/main.css">
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
+  <body ng-controller="AppController as ctrl">
+    <table>
+        <tr ng-repeat="note in ctrl.notes">
+          <td>
+            {{note.author}}
+          </td>
+          <td>
+            {{note.recipient}}
+          </td>
+          <td>
+            {{note.content}}
+          </td>
+          <td>
+            <img src="{{note.image}}" alt="img"/>
+          </td>
+        </tr>
+      </table>
+    </body>
 
-  </body>
 </html>

@@ -27,4 +27,5 @@ this.showNotes = function(){
   controller.notes = response.data
 })
 }
+this.showNotes()
 }])
