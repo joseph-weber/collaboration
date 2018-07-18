@@ -1,0 +1,23 @@
+{
+  "name": "collaboration",
+  "version": "1.0.0",
+  "description": "HW",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joseph-weber/collaboration.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joseph-weber/collaboration/issues"
+  },
+  "homepage": "https://github.com/joseph-weber/collaboration#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
