@@ -39,7 +39,7 @@ app.listen(3000, ()=>{
   console.log('Hello World');
 })
 
-mongoose.connect('mongodb://localhost:27017/auth',
+mongoose.connect('mongodb://localhost:27017/notepasser',
 {useNewUrlParser:true});
 mongoose.connection.once('open', ()=>{
   console.log('connected to mongo');
