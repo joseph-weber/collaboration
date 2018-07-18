@@ -11,6 +11,7 @@ app.use(session({
 
 app.use(express.json());
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }))
 
 
 app.get('/app', (req, res)=>{
