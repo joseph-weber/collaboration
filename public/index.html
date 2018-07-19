@@ -10,14 +10,13 @@
   </head>
   <body ng-controller="AppController as ctrl">
     <div class="container">
-    <h1>Welcome to Note-Passer</h1>
-    <h3>The Premier Passing Note App</h3>
-    <div class="note-image">
-    <img src="https://emilylayla.files.wordpress.com/2011/10/notepassing1.jpg")>
+      <h1>Welcome to Note-Passer</h1>
+      <h3>The Premier Passing Note App</h3>
+      <div class="note-image">
+      <img src="https://emilylayla.files.wordpress.com/2011/10/notepassing1.jpg")>
     </div>
-    <table>
-        <div id="note" ng-repeat="note in ctrl.notes">
-          <ul>
+      <div id="note" ng-repeat="note in ctrl.notes">
+        <ul>
           <li>
             From: {{note.author}}
           </li>
@@ -31,10 +30,23 @@
             <img src="{{note.image}}" alt="img"/>
           </li>
           <li id="toss" ng-click="ctrl.delete(note)">Throw Away</li>
+          <li ng-click="showModal()">
+            Edit
+          </li>
         </ul>
-        <div>
-      </table>
+      </div>
+      <div class="modal2">
+        <h1> Update your note </h1>
+        <form ng-submit="{{ctrl.update(note)}}">
+          <input type="text" placeholder="author" ng-model="ctrl.author"/>
+          <input type="text" placeholder="recipient" ng-model="ctrl.recipient"/>
+          <input type="text" placeholder="content" ng-model="ctrl.content"/>
+          <input type="text" placeholder="img" ng-model="ctrl.img"/>
+          <input type="submit" value="submit">
+        </form>
+      </div>
     </div>
     </body>
+
 
 </html>
