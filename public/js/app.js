@@ -3,10 +3,17 @@ const app = angular.module('NotesApp', []);
 app.controller('AppController', ['$http', function($http){
   const controller = this;
   this.modal = false;
+  this.newModal = false;
 
   this.toggleModal = function(){
     this.modal = !this.modal
   }
+
+  this.toggleNewModal = function(){
+    this.newModal = !this.newModal
+  }
+
+
   this.createUser = function(){
           $http({
               method:'POST',
@@ -52,7 +59,8 @@ app.controller('AppController', ['$http', function($http){
       image: this.image
     }
   }).then(function(response){
-    console.log(response)
+    controller.notes.push(response.data)
+    controller.toggleNewModal()
   }, function(error){
     console.log(error)
   })
