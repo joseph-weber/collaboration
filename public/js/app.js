@@ -2,7 +2,7 @@ const app = angular.module('NotesApp', []);
 
 app.controller('AppController', ['$http', function($http){
   const controller = this;
-  this.modal = true;
+  this.modal = false;
 
   this.toggleModal = function(){
     this.modal = !this.modal
@@ -72,16 +72,18 @@ this.delete = function(note){
     method: 'DELETE',
     url: '/notes/' + note._id
   }).then(function(response){
-    console.log(response)
     controller.showNotes()
   })
 }
 
 
-this.update = function(note){
+this.updateNote = function(){
   $http({
     method: 'PUT',
-    url: '/notes/' + note._id
+    url: '/notes/',
+    data: {
+
+    }
   }).then(function(response){
     controller.showNotes()
     controller.toggleModal()
