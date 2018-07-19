@@ -21,4 +21,13 @@ notes.delete('/:id', (req, res)=>{
     res.json(deletedNote)
   })
 })
+
+
+notes.put('/:id', (req, res)=>{
+  Notes.findByIdAndUpdate(req.params.id, (err, updatedNote)=>{
+    res.json(updatedNote)
+  })
+
+})
+
 module.exports = notes;

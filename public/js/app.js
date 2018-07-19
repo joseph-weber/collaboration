@@ -39,6 +39,16 @@ this.delete = function(note){
   })
 }
 
+
+this.update = function(note){
+  $http({
+    method: 'PUT',
+    url: '/notes/' + note._id
+  }).then(function(response){
+    controller.showNotes()
+  })
+}
+
 this.showNotes()
 }])
 
