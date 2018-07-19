@@ -4,27 +4,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js" charset="utf-8"></script>
         <script src="./js/app.js" charset="utf-8"></script>
         <link rel="stylesheet" href="/css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Knewave" rel="stylesheet">
     <meta charset="utf-8">
     <title></title>
   </head>
   <body ng-controller="AppController as ctrl">
+    <div class="container">
+    <h1>Welcome to Note-Passer</h1>
+    <h3>The Premier Passing Note App</h3>
+    <div class="note-image">
+    <img src="https://emilylayla.files.wordpress.com/2011/10/notepassing1.jpg")>
+    </div>
     <table>
-        <tr ng-repeat="note in ctrl.notes">
-          <td>
-            {{note.author}}
-          </td>
-          <td>
-            {{note.recipient}}
-          </td>
-          <td>
+        <div id="note" ng-repeat="note in ctrl.notes">
+          <ul>
+          <li>
+            From: {{note.author}}
+          </li>
+          <li>
+            To: {{note.recipient}}
+          </li>
+          <li>
             {{note.content}}
-          </td>
-          <td>
+          </li>
+          <li>
             <img src="{{note.image}}" alt="img"/>
-          </td>
-          <td ng-click="ctrl.delete(note)">Delete</td>
-        </tr>
+          </li>
+          <li id="toss" ng-click="ctrl.delete(note)">Throw Away</li>
+        </ul>
+        <div>
       </table>
+    </div>
     </body>
 
 </html>
