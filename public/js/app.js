@@ -57,3 +57,40 @@ this.update = function(note){
 
 this.showNotes()
 }])
+
+// Added Log In functions
+this.createUser = function(){
+        $http({
+            method:'POST',
+            url:'/users',
+            data: {
+                username:this.username,
+                password:this.password
+            }
+        }).then(function(response){
+            console.log(response);
+        })
+    }
+    this.logIn = function(){
+        $http({
+            method:'POST',
+            url:'/sessions',
+            data: {
+                username:this.username,
+                password:this.password
+            }
+        }).then(function(response){
+            console.log(response);
+        })
+    }
+
+this.goApp = function(){
+        $http({
+            method:'GET',
+            url:'/app'
+        }).then(function(response){
+            console.log(response);
+            controller.loggedInUserName = response.data.username
+        })
+    }
+}])

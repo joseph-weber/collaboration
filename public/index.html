@@ -25,6 +25,36 @@
             To: {{note.recipient}}
           </li>
           <li>
+=======
+
+      <h1>Note Passer</h1>
+      <h2>Create New Passer</h2>
+      <form ng-submit="ctrl.createUser()">
+          <input type="text" ng-model="ctrl.username"/>
+          <input type="password" ng-model="ctrl.password"/>
+          <input type="submit" value="Create New Passer"/>
+      </form>
+      <h2>Log In</h2>
+      <form ng-submit="ctrl.logIn()">
+          <input type="text" ng-model="ctrl.username"/>
+          <input type="password" ng-model="ctrl.password"/>
+          <input type="submit" value="Log In"/>
+      </form>
+      <h2>Add a Heading</h2>
+      <a href="#" ng-click="ctrl.goApp()">Click to Enter Note Passer</a>
+      <div ng-if="ctrl.loggedInUserName">
+          You Now Have Access to Note Passer, {{ctrl.loggedInUserName}}
+      </div>
+
+    <table>
+        <tr ng-repeat="note in ctrl.notes">
+          <td>
+            {{note.author}}
+          </td>
+          <td>
+            {{note.recipient}}
+          </td>
+          <td>
             {{note.content}}
           </li>
           <li>
