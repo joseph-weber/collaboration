@@ -77,18 +77,29 @@ this.delete = function(note){
 }
 
 
-this.updateNote = function(){
+this.updateNote = function(note){
   $http({
     method: 'PUT',
-    url: '/notes/',
+    url: '/notes/' + note._id,
     data: {
-
+        author: this.author,
+        recipient: this.recipient,
+        content: this.content,
+        image: this.image
     }
   }).then(function(response){
+    console.log(response)
     controller.showNotes()
+    console.log('hi')
     controller.toggleModal()
+    // console.log(response)
   })
 }
+
+this.chooseOneNote = function(note){
+    this.note = note;
+    console.log(this.note._id)
+  }
 
 
 this.showNotes()

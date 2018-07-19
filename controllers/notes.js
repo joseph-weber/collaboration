@@ -24,7 +24,7 @@ notes.delete('/:id', (req, res)=>{
 
 
 notes.put('/:id', (req, res)=>{
-  Notes.findByIdAndUpdate(req.params.id, (err, updatedNote)=>{
+  Note.findByIdAndUpdate(req.params.id, req.body, {return: true}, (err, updatedNote)=>{
     res.json(updatedNote)
   })
 
