@@ -2,6 +2,11 @@ const app = angular.module('NotesApp', []);
 
 app.controller('AppController', ['$http', function($http){
   const controller = this;
+  this.modal = true;
+
+  this.toggleModal = function(){
+    this.modal = !this.modal
+  }
 
   this.createNote = function(){
     $http({
@@ -46,6 +51,7 @@ this.update = function(note){
     url: '/notes/' + note._id
   }).then(function(response){
     controller.showNotes()
+    controller.toggleModal()
   })
 }
 

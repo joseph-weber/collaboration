@@ -15,6 +15,7 @@
       <div class="note-image">
       <img src="https://emilylayla.files.wordpress.com/2011/10/notepassing1.jpg")>
     </div>
+    <div class="note-holder">
       <div id="note" ng-repeat="note in ctrl.notes">
         <ul>
           <li>
@@ -30,12 +31,13 @@
             <img src="{{note.image}}" alt="img"/>
           </li>
           <li id="toss" ng-click="ctrl.delete(note)">Throw Away</li>
-          <li ng-click="showModal()">
+          <li ng-click="ctrl.toggleModal()">
             Edit
           </li>
         </ul>
       </div>
-      <div class="modal2">
+    </div>
+      <div ng-class="(ctrl.modal ? 'modal2' : 'modal')">
         <h1> Update your note </h1>
         <form ng-submit="{{ctrl.update(note)}}">
           <input type="text" placeholder="author" ng-model="ctrl.author"/>
@@ -45,6 +47,16 @@
           <input type="submit" value="submit">
         </form>
       </div>
+      <!-- <div class="modal2">
+        <h1> Write a new note </h1>
+        <form ng-submit="{{ctrl.createNote()}}">
+          <input type="text" placeholder="author" ng-model="ctrl.author"/>
+          <input type="text" placeholder="recipient" ng-model="ctrl.recipient"/>
+          <input type="text" placeholder="content" ng-model="ctrl.content"/>
+          <input type="text" placeholder="img" ng-model="ctrl.img"/>
+          <input type="submit" value="submit">
+        </form>
+      </div> -->
     </div>
     </body>
 

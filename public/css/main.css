@@ -16,6 +16,11 @@ body {
   max-height: 1400px;
 }
 
+.note-holder {
+  display: flex;
+    flex-flow: wrap;
+}
+
 .note-image {
   opacity: .5;
 }
@@ -61,6 +66,7 @@ td img{
 
 
 .modal {
+display: block;
 box-shadow: 0 0 5px grey;
 width: 1000px;
 margin: 0 auto;
