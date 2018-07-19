@@ -35,6 +35,7 @@ app.controller('AppController', ['$http', function($http){
                   password:this.password
               }
           }).then(function(response){
+            controller.user = response.config.data.username
               console.log(response);
           })
       }
